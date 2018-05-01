@@ -34,7 +34,7 @@ return [
     // Article Page
     'article' => [
         'title'       => 'First World Rural Problems.',
-        'description' => 'https://firstworldrural.com',
+        'description' => 'Building a Log House in the country, when you`re a software developer...',
         'number'      => 15,
         'sort'        => 'desc',
         'sortColumn'  => 'published_at',
