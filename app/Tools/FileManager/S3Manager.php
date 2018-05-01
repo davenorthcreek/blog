@@ -55,7 +55,7 @@ class S3Manager extends BaseManager
      */
     public function fileWebPath($path)
     {
-        return $this->disk->getUrl($path);
+        return $this->disk->url($path);
     }
 
     /**
@@ -137,7 +137,7 @@ class S3Manager extends BaseManager
                 'size' => human_filesize($file->getClientSize()),
                 'real_path' => $realPath,
                 'relative_url' => $realPath,
-                'url' => $this->disk->getUrl($realPath),
+                'url' => $this->disk->url($realPath),
         ];
     }
 
