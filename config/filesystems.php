@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'public',
+    'default' => 's3',
 
     /*
     |--------------------------------------------------------------------------
@@ -57,19 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_KEY'),
-            'secret' => env('AWS_SECRET'),
+            'key' => env('S3_ACCESS_KEY_ID'),
+            'secret' => env('S3_SECRET_ACCESS_KEY'),
             'region' => env('AWS_REGION'),
-            'bucket' => env('AWS_BUCKET'),
-        ],
-
-        'upyun' => [
-            'driver'        => 'upyun',
-            'bucket'        => env('UPYUN_BUCKET'),
-            'operator'      => env('UPYUN_OPERATOR'),
-            'password'      => env('UPYUN_PASSWORD'),
-            'domain'        => env('UPYUN_DOMAIN'),
-            'protocol'      => env('UPYUN_PROTOCOL'),
+            'bucket' => env('S3_BUCKET'),
         ],
 
     ],

@@ -5,7 +5,7 @@ namespace App\Providers;
 use App\Article;
 use App\Discussion;
 use App\Tools\FileManager\BaseManager;
-use App\Tools\FileManager\UpyunManager;
+use App\Tools\FileManager\S3Manager;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $lang = config('app.locale') != 'zh_cn' ? config('app.locale') : 'zh';
+        $lang = config('app.locale') != 'zh_cn' ? config('app.locale') : 'en';
         \Carbon\Carbon::setLocale($lang);
 
         Relation::morphMap([
@@ -40,8 +40,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('uploader', function ($app) {
             $config = config('filesystems.default', 'public');
 
-            if ($config == 'upyun') {
-                return new UpyunManager();
+            if ($config == 's3') {
+                return new S3Manager();
             }
 
             return new BaseManager();

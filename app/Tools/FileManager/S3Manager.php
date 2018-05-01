@@ -5,11 +5,11 @@ namespace App\Tools\FileManager;
 use Carbon\Carbon;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class UpyunManager extends BaseManager
+class S3Manager extends BaseManager
 {
     /**
      * Get all the files by the folder.
-     * 
+     *
      * @param  string $folder
      * @return array
      */
